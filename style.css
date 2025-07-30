@@ -1,0 +1,289 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+:root {
+ --blue:hsl(246, 80%, 60%);
+ --light-orange:hsl(15, 100%, 70%); /* work */
+ --soft-blue:hsl(195, 74%, 62%); /* play */
+ --light-red:hsl(348, 100%, 68%); /* study */
+ --lime-green: hsl(145, 58%, 55%); /* exercise */
+ --violet: hsl(264, 64%, 52%); /* social */
+ --soft-yellow: hsl(43, 84%, 65%); /* self care */
+ --very-dark-blue: hsl(226, 43%, 10%);
+ --dark-blue: hsl(235, 46%, 20%);
+ --light-blue: hsl(235, 46%, 35%);
+ --desaturated-blue: hsl(235, 45%, 61%);
+ --pale-blue: hsl(236, 100%, 87%);
+ --white: hsl(0,0%, 100%);
+ --font: "Rubik", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100vw;
+    background: var(--very-dark-blue);
+    font-family: var(--font);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 23.5rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+}
+.main-panel{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--blue);
+    border-radius: 1rem;
+    gap: 1rem;
+}
+.user-info img{
+    height:4rem;
+    width: 4rem;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+    
+    
+}
+.main-user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+}
+.main-title{
+    color: rgb(231, 228, 228);
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+.name{
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 300;
+    
+}
+
+.btn-container{
+    background-color: var(--dark-blue);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    
+    align-items: center;
+    padding:1.5rem;
+    
+}
+.btn-time-zone{
+    cursor: pointer;
+    border: none;
+    margin-bottom: min(6vw, 1.25rem);
+    font-family: var(--font);
+    text-align: center;
+    font-size: clamp(1rem, 10vw, 1.2rem);  
+    color: var(--desaturated-blue);
+    background-color: transparent;
+    margin: 0;
+    font: var(--font);
+
+
+}
+.btn-time-zone:hover{
+    color: white;
+}
+.btn-time-zone.active{
+    color: white;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+    background-color: var(--dark-blue);
+  }
+  
+  /* Colored top bar with icon */
+  .card-top {
+    height: 4rem;
+    border-radius: 1rem 1rem 0 0;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  
+  .card-top img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  /* Category background colors */
+  .card.work .card-top {
+    background-color: var(--light-orange);
+  }
+  
+  .card.play .card-top {
+    background-color: var(--soft-blue);
+  }
+  
+  .card.study .card-top {
+    background-color: var(--light-red);
+  }
+  
+  .card.exercise .card-top {
+    background-color: var(--lime-green);
+  }
+  
+  .card.social .card-top {
+    background-color: var(--violet);
+  }
+  
+  .card.self-care .card-top {
+    background-color: var(--soft-yellow);
+  }
+  
+  .card-content {
+    background-color: var(--dark-blue);
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: -0.8rem; /* overlap the colored top */
+    position: relative;
+    
+    z-index: 1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-content:hover {
+    background-color: var(--light-blue);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .card-header span {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .card-header img {
+    width: 20px;
+    height: 5px;
+    cursor: pointer;
+  }
+  .card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-body h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+  
+  .card-body p {
+    font-size: 0.875rem;
+    color: var(--desaturated-blue);
+    margin-top: 0.25rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    body{
+      height: 100vh;
+    }
+       
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      grid-template-rows: repeat(2, auto);   /* 2 rows */
+      gap: 2rem;
+      max-width: 70rem;
+      margin: 3rem auto;
+      align-items: stretch;
+    }
+  
+    .main-panel {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      height: 100%;
+    
+      display: flex;
+      flex-direction: column;
+    }
+    .card-body{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .user-info{
+      height: 70%;
+      display: flex;
+      padding:  1.5rem;
+      gap: 2.4rem;
+      flex-direction: column;
+    align-items: initial;
+    }
+    .name{
+      font-size: 2rem ; /* BIGGER FONT */
+      line-height: 1.4;
+     
+    }
+    
+.btn-container {
+  background-color: hsl(235, 46%, 20%);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+    .cards {
+      grid-column: 2 / 5;
+      grid-row: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for cards */
+      grid-template-rows: repeat(2, auto);   /* 2 rows for cards */
+      gap: 2rem;
+      margin-top: 0; /* Remove mobile spacing */
+    }
+  }
+  
