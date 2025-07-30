@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Final Screenshot](./screenshot.png)
+![Final Screenshot](./Screenshot.png)
 
 ---
 
